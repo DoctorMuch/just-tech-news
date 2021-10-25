@@ -1,0 +1,31 @@
+{
+  "name": "just-tech-news",
+  "version": "1.0.0",
+  "description": "A simple news site that uses Sequelize and allows users to add, comment on, and vote for news articles. All about tech.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoctorMuch/just-tech-news.git"
+  },
+  "keywords": [
+    "Sequelize",
+    "Express",
+    "node",
+    "js"
+  ],
+  "author": "David F Mueth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoctorMuch/just-tech-news/issues"
+  },
+  "homepage": "https://github.com/DoctorMuch/just-tech-news#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.2",
+    "sequelize": "^6.8.0"
+  }
+}
