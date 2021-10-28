@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Vote } = require('../../models');
+const { User, Post, Vote, Comment } = require('../../models');
 
 router.get('/', (req, res) => {
   User.findAll({
@@ -22,6 +22,14 @@ router.get('/:id', (req, res) => {
       {
         model: Post,
         attributes: ['id', 'title', 'post_url', 'created_at']
+      },
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'created_at'],
+        include: {
+          model: Post,
+          attributes: ['title']
+        }
       },
       {
         model: Post,
@@ -61,7 +69,7 @@ router.post('/login', (req, res) => {
   User.findOne({
     where: {
       email: req.body.email
-    }
+    },
   }).then(dbUserData => {
     if(!dbUserData) {
       res.status(400).json({ message: 'No user with that email address! '});
