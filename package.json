@@ -4,6 +4,7 @@
   "description": "A simple news site that uses Sequelize and allows users to add, comment on, and vote for news articles. All about tech.",
   "main": "server.js",
   "scripts": {
+    "test": "jest",
     "start": "node server.js"
   },
   "repository": {
@@ -31,5 +32,8 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.3.2",
     "sequelize": "^6.8.0"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
   }
 }
