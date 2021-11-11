@@ -8,7 +8,8 @@ Comment.belongsTo(User, {
 });
 
 Comment.belongsTo(Post, {
-  foreign_key: 'post_id'
+  foreign_key: 'post_id',
+  onDelete: 'cascade'
 });
 
 User.hasMany(Comment, {
@@ -16,7 +17,8 @@ User.hasMany(Comment, {
 });
 
 Post.hasMany(Comment, {
-  foreignKey: 'post_id'
+  foreignKey: 'post_id',
+  onDelete: 'cascade'
 });
 
 Vote.belongsTo(User, {
@@ -27,10 +29,10 @@ User.hasMany(Vote, {
   foreignKey: 'user_id'
 });
 
-Post.hasMany(Vote, {
+Post.hasMany(Vote, { onDelete: 'cascade', hooks:true
 });
 
-Vote.belongsTo(Post, {
+Vote.belongsTo(Post, { onDelete: 'cascade'
 });
 
 User.hasMany(Post, {
